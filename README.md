@@ -16,11 +16,11 @@ Tools: Python, pandas, matplotlib. A SQL version will be added later.
 ## Key findings
 
 1. **Orders by state:** Demand is concentrated in the southeast. SP has 41,746 orders (42.0%), and SP, RJ and MG together make up 66.6% of all orders.
-2. **Cancellation rate:** 625 orders (0.63%) are `canceled` and 609 (0.61%) are `unavailable`; 97.0% are `delivered`. About 1.7% are still in progress. [467] of the canceled or unavailable orders still have item rows, so they are excluded from sales.
-3. **Monthly sales:** Using Jan 2017 to Aug 2018, sales peak in Nov 2017 at about [1.01M]. [Top day: date.] Jan to Aug 2018 sales are about [2.4] times Jan to Aug 2017; the number of orders grew by [a] and the average order value by [b].
-4. **Top categories:** `health_beauty`, `watches_gifts` and `bed_bath_table` lead. No single category dominates (the largest is [9.3]%); the top 3 account for [25.8]% of sales and the top 10 for [62.4]%.
+2. **Cancellation rate:** 625 orders (0.63%) are `canceled` and 609 (0.61%) are `unavailable`; 97.0% are `delivered`. About 1.7% are still in progress. 467 of the canceled or unavailable orders still have item rows, so they are excluded from sales.
+3. **Monthly sales:** Using Jan 2017 to Aug 2018, sales peak in Nov 2017 at about 1.00M. The top day is 2017-11-24 (Black Friday), about 15% of that month. Jan to Aug 2018 sales are about 2.38 times Jan to Aug 2017; the number of orders grew by a factor of 2.37 and the average order value stayed flat (1.00).
+4. **Top categories:** `health_beauty`, `watches_gifts` and `bed_bath_table` lead. No single category dominates (the largest is 9.3%); the top 3 account for 25.9% of sales and the top 10 for 62.4%.
 
-**Definition of sales:** sum of item `price` (freight excluded) over orders that are not `canceled` or `unavailable`. This removes [X]% of total item value.
+**Definition of sales:** sum of item `price` (freight excluded) over orders that are not `canceled` or `unavailable`. This removes 0.72% of total item value.
 
 ## Data quality notes
 
