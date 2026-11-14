@@ -1,6 +1,6 @@
 # Olist E-Commerce Sales Analysis
 
-Exploratory analysis of the Olist Brazilian e-commerce dataset with Python and pandas: merging 7 relational tables into one order-item level table and answering four business questions.
+Exploratory analysis of the Olist Brazilian e-commerce dataset with Python, pandas and SQL: merging 7 relational tables into one order-item level table and answering four business questions.
 
 ## Background
 
@@ -11,7 +11,7 @@ The dataset contains about 99,000 orders placed on a Brazilian online marketplac
 3. Monthly sales
 4. Top 10 product categories by sales
 
-Tools: Python, pandas, matplotlib. A SQL version will be added later.
+Tools: Python, pandas, matplotlib, SQL (SQLite). The same four questions are also answered in SQL (see `sql/`), and results are checked against the pandas version.
 
 ## Key findings
 
@@ -26,7 +26,7 @@ Tools: Python, pandas, matplotlib. A SQL version will be added later.
 
 - 775 orders have no items (mostly `unavailable` and `canceled`). They are kept for the cancellation analysis.
 - 1,603 item rows have no product category and are labeled "Unknown" instead of dropped.
-- 24 rows had categories missing from the translation table (2 categories); English names were added manually.
+- 24 rows had categories missing from the translation table (2 categories); English names were added manually in the pandas version. In the SQL version these rows fall into "Unknown", which does not change the top 10.
 - `payments` and `reviews` were aggregated to one row per order before joining, to avoid duplicated rows and double-counted money. These order-level columns repeat on every item row of an order and are never summed on the merged table.
 
 ## Limitations
@@ -42,4 +42,5 @@ Tools: Python, pandas, matplotlib. A SQL version will be added later.
 1. Download the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) from Kaggle. The data is not included in this repository.
 2. Put the CSV files in a `data/` folder.
 3. Install the requirements: `pip install jupyter pandas matplotlib`
-4. Open the notebook and run all cells.
+4. Run the pandas notebook to reproduce the analysis.
+5. Run `olist_sql.ipynb`: it builds a SQLite database from the CSV files (`data/olist.db`, not included in the repository), then runs the queries in `sql/`.
